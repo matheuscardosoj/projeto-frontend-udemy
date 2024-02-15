@@ -22,7 +22,7 @@
     height: auto;
 }
 
-.top3-content {
+.backgroundInfo-content {
     max-width: 64rem;
     display: flex;
     flex-flow: column wrap;
@@ -31,4 +31,43 @@
     text-align: center;
 }
 
+.top3-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+}
+
+.top3-heading {
+    margin-bottom: 1rem;
+}
+
+.top3-description {
+    padding-bottom: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before {
+    position: relative;
+    top: 3rem;
+    display: inline-block;
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    transform: rotate(5deg);
+    font-style: italic;
+    font-size: 9rem;
+    margin-right: .25em;
+}
 
