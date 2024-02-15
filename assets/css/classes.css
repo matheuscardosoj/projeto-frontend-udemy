@@ -6,7 +6,7 @@
 }
 
 .white-bg {
-    background: var(--secondary-color);
+    background: 10rem var(--secondary-color);
 }
 
 .main-content {
