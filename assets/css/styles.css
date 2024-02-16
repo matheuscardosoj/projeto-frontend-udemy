@@ -3,7 +3,7 @@
 @import url("classes.css");
 @import url("header.css");
 
-.home-content {
+.home-content, .contact-content {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -11,13 +11,13 @@
     min-height: 100vh;
 }
 
-.home-text, .home-img {
+.home-content div, .contact-content div {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
-.home-img img {
+.home-img img, .contact-img img {
     max-width: 100%;
     height: auto;
 }
@@ -89,4 +89,81 @@
 .table-container {
     width: 100%;
     overflow-x: auto;
+}
+
+.contact-form {
+    grid-column: span 2;
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+
+.form-grid legend {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    flex: 1 1 320px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group input, .form-group textarea {
+    border: none;
+    background: var(--secondary-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    outline: none;
+    font-size: 3rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    box-shadow: 0 0 10px 2px rgba(220, 20, 60, .9);
+}
+
+.form-group ::placeholder {
+    color: var(--gray-color);
+}
+
+.form-group button {
+    border: .5rem solid var(--secondary-color);
+    background: none;
+    color: var(--secondary-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    width: fit-content;
+}
+
+.form-group button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.footer p {
+    margin: 0;
+    margin: 2em 0;
+}
+
+.footer a {
+    color: var(--primary-color);
+}
+
+.footer .heart {
+    color: var(--tertiary-color);
 }
