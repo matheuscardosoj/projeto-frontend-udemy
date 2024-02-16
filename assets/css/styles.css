@@ -31,18 +31,18 @@
     text-align: center;
 }
 
-.top3-content {
+.grid-content {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     min-height: 100vh;
 }
 
-.top3-heading {
+.grid-heading {
     margin-bottom: 1rem;
 }
 
-.top3-description {
+.grid-description {
     padding-bottom: 5rem;
 }
 
@@ -71,3 +71,22 @@
     margin-right: .25em;
 }
 
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}

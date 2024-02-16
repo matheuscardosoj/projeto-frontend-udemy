@@ -54,5 +54,29 @@ a {
 }
 
 p {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+
+table {
+    min-width: 360px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+table td,table th {
+    white-space: nowrap;
+    padding: 1rem;
+    border: 0.1rem solid var(--light-gray-color);
+    text-align: left;
+}
+
+tfoot, thead {
+    background-color: var(--light-gray-color);
 }
