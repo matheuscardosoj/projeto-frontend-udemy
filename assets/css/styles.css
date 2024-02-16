@@ -3,21 +3,23 @@
 @import url("classes.css");
 @import url("header.css");
 
-.home-content, .contact-content {
+.home-content {
     position: relative;
+}
+
+.grid-content-default {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
-    min-height: 100vh;
 }
 
-.home-content div, .contact-content div {
+.grid-content-default div {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
-.home-img img, .contact-img img {
+.grid-content-default img {
     max-width: 100%;
     height: auto;
 }
@@ -27,7 +29,6 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    min-height: 100vh;
     text-align: center;
 }
 
@@ -35,7 +36,6 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    min-height: 100vh;
 }
 
 .grid-heading {
@@ -168,8 +168,29 @@
     color: var(--tertiary-color);
 }
 
+.close-menu {
+    display: none;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--secondary-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: .2rem;
+    color: var(--primary-color);
+    transform: rotate(-90deg);
+    border: 0.1rem solid var(--primary-color);
+}
+
 @media screen and (max-width: 800px) {
-    .home-content,.contact-content {
+    .grid-content-default {
         grid-template-columns: auto;
     }
     
@@ -194,5 +215,46 @@
 
     .contact-form {
         grid-column: auto;
+    }
+
+    .header {
+        position: fixed;
+        inset: 0;
+        text-align: center;
+        display: none;
+    }
+
+    .header-content, .header-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-content {
+        height: 100vh;
+    }
+
+    .close-menu-label::after {
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        content: '\2630';
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: .15em;
+        cursor: pointer;
+    }
+
+    .close-menu:checked ~ .header {
+        display: block;
+    }
+
+    .close-menu:checked ~ .close-menu-label::after {
+        content: "\00D7";
     }
 }
