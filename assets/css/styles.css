@@ -27,7 +27,7 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -166,4 +166,33 @@
 
 .footer .heart {
     color: var(--tertiary-color);
+}
+
+@media screen and (max-width: 800px) {
+    .home-content,.contact-content {
+        grid-template-columns: auto;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .gallery-img img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .grid-content {
+        display: block;
+    }
+
+    .contact-form {
+        grid-column: auto;
+    }
 }
